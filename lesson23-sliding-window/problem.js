@@ -12,6 +12,25 @@
 // Explanation: Any substring of length 3 contains exactly 3 distinct characters.
 
 module.exports = function longestSubstringKDistinct(str, k) {
-    // your code here
+  let charAt = {};
+  let maxSum = 0;
+  let left = 0;
+
+  for (let right = 0; right < str.length; right++) {
+    if (!charAt[str[right]]) {
+      charAt[str[right]] = 1;
+    } else {
+      charAt[str[right]]++;
+    }
+
+    if (Object.keys(charAt).length > k) {
+      charAt[str[left]] -= 1;
+      if (charAt[str[left]] === 0) {
+        delete charAt[str[left]];
+      }
+      left++;
+    }
+    maxSum = Math.max(maxSum, right - left + 1);
+  }
+  return maxSum;
 };
-  
