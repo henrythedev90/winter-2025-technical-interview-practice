@@ -8,3 +8,17 @@ function isLeapYear(year) {
 }
 
 module.exports = isLeapYear;
+
+function isUniform(a, b) {
+  let count = 0;
+  for (let range = 1; range <= 9; range++) {
+    let num = range;
+    while (num <= b) {
+      if (num >= a) {
+        count++;
+      }
+      num = num * 10 + range;
+    }
+  }
+  return count;
+}

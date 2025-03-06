@@ -9,6 +9,15 @@
  */
 const twoSum = (nums, target) => {
   // Your code here
+  let tracker = {};
+  for (let i = 0; i < nums.length; i++) {
+    let compliment = target - nums[i];
+    if (tracker[compliment] !== undefined) {
+      return [tracker[compliment], i];
+    }
+    tracker[nums[i]] = i;
+  }
+  return null;
 };
 
 module.exports = twoSum;

@@ -5,27 +5,32 @@
  * - peek(): Returns the top item without removing it. If the stack is empty, return null.
  * - isEmpty(): Returns true if the stack is empty, false otherwise.
  */
- class Stack {
-    constructor() {
-      this.items = [];
-    }
-  
-    push(item) {
-
-    }
-  
-    pop() {
-    
-    }
-  
-    peek() {
-      
-    }
-  
-    isEmpty() {
-      
-    }
+class Stack {
+  constructor() {
+    this.items = [];
   }
-  
-  module.exports = Stack;
-  
+
+  push(item) {
+    this.items.push(item);
+  }
+
+  pop() {
+    if (this.items.length === 0) {
+      return null;
+    }
+    return this.items.pop();
+  }
+
+  peek() {
+    if (this.items.length === 0) {
+      return null;
+    }
+    return this.items[this.items.length - 1];
+  }
+
+  isEmpty() {
+    return this.items.length === 0;
+  }
+}
+
+module.exports = Stack;

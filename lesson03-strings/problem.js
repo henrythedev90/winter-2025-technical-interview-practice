@@ -31,6 +31,16 @@ function stringMatching(text, pattern) {
   // TODO: Implement the string matching algorithm
   // Return an array of indices where the pattern is found in the text
   // If the pattern is not found, return an empty array
+  if (pattern === "" || text === "") return [];
+  if (pattern.length > text.length) return [];
+
+  let occurancesArr = [];
+  for (let i = 0; i <= text.length - pattern.length; i++) {
+    if (text.slice(i, i + pattern.length) === pattern) {
+      occurancesArr.push(i);
+    }
+  }
+  return occurancesArr;
 }
 
 module.exports = stringMatching;

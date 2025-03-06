@@ -1,4 +1,4 @@
-const topKFrequent = require("/Users/paulgasbarra/Code/pursuit/dsa-coursework-l3-2025/lesson08-hash-tables/problem");
+const topKFrequent = require("/Users/paulgasbarra/Code/pursuit/dsa-coursework-l3-2025/lesson10-hash-tables/problem");
 
 // Test case 1: nums contains positive and negative numbers
 let nums = [1, -2, 2, 3, -3, 3, 3];
