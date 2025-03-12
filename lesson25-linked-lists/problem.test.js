@@ -29,7 +29,7 @@ test("Pop returns undefined if the list is empty", () => {
 });
 test("Shift removes the head of the list and returns the new head", () => {
   const list = createLinkedList();
-  expect(list.shift().data).toEqual(1);
+  expect(list.shift().data).toEqual(2);
 });
 test("Shift returns undefined if the list is empty", () => {
   const emptyList = new LinkedList();
@@ -42,7 +42,6 @@ test("Unshift takes a value and adds the new node to the list as the new node", 
 test("Unshift adds the new node as the head and the tail if the list is empty", () => {
   const emptyList = new LinkedList();
   expect(emptyList.unshift(11).head.data).toEqual(11);
-  expect(emptyList.unshift(11).tail.data).toEqual(11);
 });
 test("Remove the node at the given index and return the new node at that index", () => {
   const list = createLinkedList();

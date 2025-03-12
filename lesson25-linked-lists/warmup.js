@@ -83,11 +83,7 @@ const books = [
 ];
 
 const onlyBookTitles = (arr) => {
-  let newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    newArr.push(arr[i].title);
-  }
-  return newArr;
+  return arr.map((book) => book.title);
 };
 // Given an array of books, return an array with books that are fiction.
 
