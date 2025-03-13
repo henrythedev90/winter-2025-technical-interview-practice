@@ -1,11 +1,36 @@
-const isLeapYear = require("/Users/paulgasbarra/Code/pursuit/dsa-coursework-l3-2025/lesson10-big-o-notation/problem");
+const isLeapYear = require("./problem");
 
 // Test cases
-console.log(isLeapYear(2000)); // Expected output: true
-console.log(isLeapYear(1900)); // Expected output: false
-console.log(isLeapYear(2024)); // Expected output: true
-console.log(isLeapYear(2021)); // Expected output: false
-console.log(isLeapYear(1600)); // Expected output: true
-console.log(isLeapYear(1700)); // Expected output: false
-console.log(isLeapYear(1800)); // Expected output: false
-console.log(isLeapYear(2100)); // Expected output: false
+describe("isLeapYear", () => {
+  test("Is it a Leap year for 2000", () => {
+    expect(isLeapYear(2000)).toBe(true); // Expected output: true
+  });
+
+  test("Is it a Leap year for 1900", () => {
+    expect(isLeapYear(1900)).toBe(false); // Expected output: false
+  });
+
+  test("Is it a Leap year for 2024", () => {
+    expect(isLeapYear(2024)).toBe(true); // Expected output: true
+  });
+
+  test("Is it a Leap year for 2021", () => {
+    expect(isLeapYear(2021)).toBe(false); // Expected output: false
+  });
+
+  test("Is it a Leap year for 1600", () => {
+    expect(isLeapYear(1600)).toBe(true); // Expected output: true
+  });
+
+  test("Is it a Leap year for 1700", () => {
+    expect(isLeapYear(1700)).toBe(false); // Expected output: false
+  });
+
+  test("Is it a Leap year for 1800", () => {
+    expect(isLeapYear(1800)).toBe(false); // Expected output: false
+  });
+
+  test("Is it a Leap year for 2100", () => {
+    expect(isLeapYear(2100)).toBe(false); // Expected output: false
+  });
+});

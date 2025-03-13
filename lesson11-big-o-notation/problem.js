@@ -3,22 +3,21 @@
  * This should ideally run in O(1) time.
  */
 
+//year ? isLeapYear or notLeapYear
+//isLeapYear % 4 === 0
+//isLeapYeat % 100 !== 0  && year % 400 === 0 && year % 100 !=== 0
+
 function isLeapYear(year) {
-  // TODO: Implement the function
+  if (year % 4 === 0) {
+    if (year % 10 === 0) {
+      if (year % 400 === 0) {
+        return true;
+      }
+      return false;
+    }
+    return true;
+  }
+  return false;
 }
 
 module.exports = isLeapYear;
-
-function isUniform(a, b) {
-  let count = 0;
-  for (let range = 1; range <= 9; range++) {
-    let num = range;
-    while (num <= b) {
-      if (num >= a) {
-        count++;
-      }
-      num = num * 10 + range;
-    }
-  }
-  return count;
-}
