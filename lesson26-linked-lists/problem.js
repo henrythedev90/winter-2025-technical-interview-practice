@@ -32,7 +32,7 @@ const mergeLinkList = (list1, list2) => {
   let dummy = new ListNode(0);
   let current = dummy;
   while (list1 !== null && list2 !== null) {
-    if (list1.val <= list2.val) {
+    if (list1.value <= list2.value) {
       current.next = list1;
       list1 = list1.next;
     } else {
@@ -49,4 +49,11 @@ const mergeLinkList = (list1, list2) => {
   }
 
   return dummy.next;
+};
+
+module.exports = {
+  ListNode,
+  middleNode,
+  hasCycle,
+  mergeLinkList,
 };
