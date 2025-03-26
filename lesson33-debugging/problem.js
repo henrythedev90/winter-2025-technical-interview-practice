@@ -26,7 +26,11 @@ class EventManager {
   }
 
   removeEvent(eventName) {
-    this.events = this.events.filter((event) => event.name !== eventName);
+    const index = this.events.findIndex((event) => event.name === eventName);
+
+    if (index !== -1) {
+      this.events.splice(index, 1);
+    }
   }
 
   getAllEvents() {
