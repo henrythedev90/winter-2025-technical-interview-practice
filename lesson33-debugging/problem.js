@@ -1,6 +1,6 @@
 class EventManager {
   constructor() {
-    this.events = {};
+    this.events = [];
   }
 
   subscribe(eventName, callback) {
@@ -19,6 +19,24 @@ class EventManager {
     } else {
       console.log(`No such event: ${eventName}`);
     }
+  }
+
+  addEvent(eventName, date) {
+    this.events.push({ name: eventName, date: date });
+  }
+
+  removeEvent(eventName) {
+    this.events = this.events.filter((event) => event.name !== eventName);
+  }
+
+  getAllEvents() {
+    return this.events.map((event) => event.name);
+  }
+
+  getEventsByDate(date) {
+    return this.events
+      .filter((event) => event.date === date)
+      .map((event) => event.name);
   }
 
   emit(eventName, data) {

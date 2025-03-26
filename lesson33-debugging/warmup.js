@@ -11,7 +11,7 @@ function printNumbers() {
 printNumbers(); // should print 1 - 5 in order a second apart
 
 function sortNumbers(arr) {
-  return arr.sort();
+  return arr.sort((a, b) => a - b);
 }
 
 console.log(sortNumbers([10, 5, 3, -1, 0])); // should print [-1, 0, 3, 5, 10]
